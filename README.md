@@ -31,19 +31,19 @@ test(parse('var foo = 1;').body[0], rule) //false
 Test whether node passes a test condition. Test condition is an object containing node types as keys and testing functions as values. Mathed nodes are tested against the condition, and if no nodes matched — test returns false. You can declare node supertypes to match, in that case they will be checked beforehead.
 
 ```js
-	var rule = {
-			Expression: function (node) {
-				return true;
-			},
-			AssignmentExpression: function (node) {
-				if (node.operator !== '=') return false;
-				return node.left.name === 'foo';
-			}
-		};
+var rule = {
+	Expression: function (node) {
+		return true;
+	},
+	AssignmentExpression: function (node) {
+		if (node.operator !== '=') return false;
+		return node.left.name === 'foo';
+	}
+};
 
-	test(parse('foo = 1;').body[0].expression, rule); //true
-	test(parse('bar = 1;').body[0].expression, rule); //false
-	test(parse('var foo = 1;').body[0], rule); //false
+test(parse('foo = 1;').body[0].expression, rule); //true
+test(parse('bar = 1;').body[0].expression, rule); //false
+test(parse('var foo = 1;').body[0], rule); //false
 ```
 
 
