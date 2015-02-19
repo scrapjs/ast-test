@@ -1,6 +1,6 @@
 {
   "name": "ast-test",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Test ast node on some condition",
   "main": "index.js",
   "scripts": {
