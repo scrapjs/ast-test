@@ -1,0 +1,34 @@
+{
+  "name": "ast-test",
+  "version": "1.0.0",
+  "description": "Test ast node on some condition",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dfcreative/ast-test"
+  },
+  "keywords": [
+    "ast",
+    "test",
+    "esprima",
+    "estools"
+  ],
+  "author": "Deema Ywanov <df.creative@gmail.com>",
+  "license": "Unlicensed",
+  "bugs": {
+    "url": "https://github.com/dfcreative/ast-test/issues"
+  },
+  "homepage": "https://github.com/dfcreative/ast-test",
+  "devDependencies": {
+    "chai": "^2.0.0",
+    "escodegen": "^1.6.1",
+    "esprima": "^2.0.0",
+    "mocha": "^2.1.0"
+  },
+  "dependencies": {
+    "ast-types": "^0.6.14"
+  }
+}
