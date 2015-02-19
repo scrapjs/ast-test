@@ -19,18 +19,30 @@ function test(node, rules) {
 
 	visit(node, {
 		visitNode: function (path) {
-			var node = path.node;
+			var node = path.node, type = node.type;
+			var nodeTypes = types.getSupertypeNames(type);
 
-			if (
-				rules[node.type] &&
-				rules[node.type](node)
-			) {
-				testResult = true;
+			//test supertypes first
+			for (var i = 0, l = nodeTypes.length; i < l; i++) {
+				type = nodeTypes[i];
+				if (rules[type]) {
+					if (!rules[type](node)) {
+						testResult = false;
+						this.abort();
+						return false;
+					}
+				}
 			}
-			else {
+
+			//test specific type
+			type = node.type;
+			if (!rules[type] || !rules[type](node)) {
 				testResult = false;
+				this.abort();
+				return false;
 			}
-			this.abort();
+
+			return false;
 		}
 	});
 

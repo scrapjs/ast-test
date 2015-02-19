@@ -35,4 +35,21 @@ describe('ast-test', function(){
 		assert.notOk(test(parse('bar = 1;').body[0].expression, rule)); //false
 		assert.notOk(test(parse('var foo = 1;').body[0], rule)); //false
 	});
+
+	it('generalized test', function () {
+		//catch all `foo` assignments
+		var rule = {
+			Expression: function (node) {
+				return true;
+			},
+			AssignmentExpression: function (node) {
+				if (node.operator !== '=') return false;
+				return node.left.name === 'foo';
+			}
+		};
+
+		assert.ok(test(parse('foo = 1;').body[0].expression, rule)); //true
+		assert.notOk(test(parse('bar = 1;').body[0].expression, rule)); //false
+		assert.notOk(test(parse('var foo = 1;').body[0], rule)); //false
+	});
 });
