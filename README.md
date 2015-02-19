@@ -28,7 +28,7 @@ test(parse('var foo = 1;').body[0], rule) //false
 
 ### test(Node, testRules) → Boolean
 
-Test whether node passes test rules passed. `testRules` is an object containing node types as keys and testing functions as values. Matched nodes are tested against the condition, and if matched none — test returns false. You can declare node supertypes to match, in that case they will be checked beforehead.
+Test whether node passes test rules passed. `testRules` is an object containing node types as keys and testing functions as values. Matched nodes are tested with according testing functions, and if matched none — test returns false. You can declare node supertypes to match, in that case they will be checked beforehead.
 
 ```js
 var rule = {
