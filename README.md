@@ -1,4 +1,4 @@
-# ast-test [![Build Status](https://travis-ci.org/dfcreative/ast-test.svg?branch=master)](https://travis-ci.org/dfcreative/ast-test) [![experimental](http://badges.github.io/stability-badges/dist/experimental.svg)](http://github.com/badges/stability-badges)
+# ast-test [![Build Status](https://travis-ci.org/dfcreative/ast-test.svg?branch=master)](https://travis-ci.org/dfcreative/ast-test) [![unstable](http://badges.github.io/stability-badges/dist/unstable.svg)](http://github.com/badges/stability-badges)
 
 Test source tree on passing some condition.
 
